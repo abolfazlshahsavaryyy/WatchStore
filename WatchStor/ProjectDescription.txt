@@ -1,0 +1,15 @@
+﻿Models:
+1.product
+	- Id
+	- Name
+	- Brand
+	- Price
+	- Gender
+	- Type
+2.order 
+	- Id
+	- WatchId
+	- number
+	- TimeOfPurcshase
+	- TimeOfSend 
+4.ApplicationUser
