@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WatchStor.Models;
 
+
 namespace WatchStor.Controllers
 {
     public class HomeController : Controller

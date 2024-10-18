@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WatchStor.Data\WatchStor.Data.csproj" />
+    <ProjectReference Include="..\WatchStor.Models\WatchStor.Models.csproj" />
+  </ItemGroup>
+
 </Project>
