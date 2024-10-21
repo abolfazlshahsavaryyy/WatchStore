@@ -26,6 +26,9 @@
                 <th>Gender</th>
                 <th>Type</th>
                 <th>operator</th>
+                <th>Image URL</th>
+               
+
             </tr>
         </thead>
         <tbody>
@@ -47,6 +50,8 @@
                             <a asp-area="Admin" asp-controller="Product" asp-action="Read" asp-route-id="@product.Id" class="btn btn-secondary">Read</a>
 
                         </td>
+                        <td>@product.ImageURL</td>
+                        
                     </tr>
                     counter++;
                 }

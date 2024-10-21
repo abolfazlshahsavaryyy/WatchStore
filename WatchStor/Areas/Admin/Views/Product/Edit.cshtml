@@ -1,7 +1,7 @@
 ﻿@model WatchStor.Models.Product
 
 @{
-    
+
 }
 
 <div class="container mt-4">
@@ -40,7 +40,7 @@
         <div class="mb-3">
             <label asp-for="WatchType" class="form-label"></label>
             <select asp-for="WatchType" class="form-select">
-                
+
                 <option value="">Select Type</option>
                 <option value="0">classic</option>
                 <option value="1">sport</option>
@@ -51,6 +51,10 @@
 
         <button type="submit" class="btn btn-success">Edit</button>
         <a class="btn btn-primary" asp-area="Admin" asp-controller="Product" asp-action="Index">return to index page</a>
+        @{if (Model.ImageURL == null || Model.ImageURL == "")
+        {
+            <a class="btn btn-primary" asp-controller="Product" asp-action="EditImage" asp-route-id="@Model.Id" >Add Image to product</a>
+        }}
     </form>
 
 </div>

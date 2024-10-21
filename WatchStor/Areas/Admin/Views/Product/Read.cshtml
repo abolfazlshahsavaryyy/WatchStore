@@ -7,7 +7,8 @@
 }
 
 <div class="container mt-4">
-    <h2>Read Product</h2>
+    <h2>Product page</h2>
+    <img src="@Model.ImageURL" alt="Watch piture" style="width:300xp;hight:250xp;"/>
 
     <form asp-action="Read" method="post" class="mt-3">
         <div class="mb-3">
@@ -42,6 +43,7 @@
 
         
         <a class="btn btn-primary" asp-area="Admin" asp-controller="Product" asp-action="Index">Return to Index page</a>
+        <a asp-area="Customer" class="btn btn-outline-dark">Order</a>
     </form>
 
 </div>

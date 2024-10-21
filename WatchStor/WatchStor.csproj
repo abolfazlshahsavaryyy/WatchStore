@@ -25,4 +25,8 @@
     <ProjectReference Include="..\WatchStor.Models\WatchStor.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
 </Project>

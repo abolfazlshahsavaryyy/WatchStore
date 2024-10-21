@@ -23,6 +23,7 @@ namespace WatchStor.Models
         public Gender Gender { get; set; } // E.g., "Male", "Female", "Unisex"
         [Required]
         public TypeWatch WatchType { get; set; } // E.g., "Watch", "Accessories", etc.
+        public string? ImageURL {  get; set; }
     }
 
 }

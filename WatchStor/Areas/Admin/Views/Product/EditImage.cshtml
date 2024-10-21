@@ -1,0 +1,11 @@
+﻿@model Product
+
+<form asp-action="EditImage" enctype="multipart/form-data" method="post" class="mt-3">
+    <div class="form-group">
+        <label for="file">Upload Image</label>
+        <input type="file" name="file" id="file" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Edit</button>
+    <a class="btn btn-primary" asp-area="Admin" asp-controller="Product" asp-action="Index">return to index page</a>
+</form>
