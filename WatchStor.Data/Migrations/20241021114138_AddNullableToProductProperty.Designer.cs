@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace WatchStor.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241021114138_AddNullableToProductProperty")]
+    partial class AddNullableToProductProperty
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,49 +56,26 @@ namespace WatchStor.Data.Migrations
                         {
                             Id = 1,
                             Number = 2,
-                            TimeOfPurchase = new DateTime(2024, 10, 13, 21, 5, 57, 209, DateTimeKind.Local).AddTicks(2032),
-                            TimeOfSend = new DateTime(2024, 10, 16, 21, 5, 57, 209, DateTimeKind.Local).AddTicks(2051),
+                            TimeOfPurchase = new DateTime(2024, 10, 11, 15, 11, 36, 505, DateTimeKind.Local).AddTicks(774),
+                            TimeOfSend = new DateTime(2024, 10, 14, 15, 11, 36, 505, DateTimeKind.Local).AddTicks(793),
                             WatchId = 1
                         },
                         new
                         {
                             Id = 2,
                             Number = 1,
-                            TimeOfPurchase = new DateTime(2024, 10, 18, 21, 5, 57, 209, DateTimeKind.Local).AddTicks(2055),
-                            TimeOfSend = new DateTime(2024, 10, 21, 21, 5, 57, 209, DateTimeKind.Local).AddTicks(2056),
+                            TimeOfPurchase = new DateTime(2024, 10, 16, 15, 11, 36, 505, DateTimeKind.Local).AddTicks(798),
+                            TimeOfSend = new DateTime(2024, 10, 19, 15, 11, 36, 505, DateTimeKind.Local).AddTicks(799),
                             WatchId = 2
                         },
                         new
                         {
                             Id = 3,
                             Number = 3,
-                            TimeOfPurchase = new DateTime(2024, 10, 20, 21, 5, 57, 209, DateTimeKind.Local).AddTicks(2057),
-                            TimeOfSend = new DateTime(2024, 10, 27, 21, 5, 57, 209, DateTimeKind.Local).AddTicks(2058),
+                            TimeOfPurchase = new DateTime(2024, 10, 18, 15, 11, 36, 505, DateTimeKind.Local).AddTicks(800),
+                            TimeOfSend = new DateTime(2024, 10, 25, 15, 11, 36, 505, DateTimeKind.Local).AddTicks(801),
                             WatchId = 3
                         });
-                });
-
-            modelBuilder.Entity("WatchStor.Models.Pay", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Time")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("price")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("pays");
                 });
 
             modelBuilder.Entity("WatchStor.Models.Product", b =>

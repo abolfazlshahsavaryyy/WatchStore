@@ -145,6 +145,12 @@ namespace WatchStor.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+            foreach(Order o in _context.Orders.ToList().Where(x=>x.WatchId==p.Id))
+            {
+                _context.Orders.Remove(o);
+                
+            }
+            _context.SaveChanges();
             if (find_product.ImageURL != null || find_product.ImageURL != "")
             {
                 var ImagePath = Path.Combine(_webHostEnvironment.WebRootPath, find_product.ImageURL.TrimStart('/'));

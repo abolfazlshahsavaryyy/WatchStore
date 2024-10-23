@@ -23,7 +23,7 @@ namespace WatchStor.Models
 
         // Navigation property to link to the Product (Watch)
         [ForeignKey("WatchId")]
-        public Product Watch { get; set; }
+        public Product? Watch { get; set; }
     }
 
 }

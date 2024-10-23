@@ -43,7 +43,7 @@
 
         
         <a class="btn btn-primary" asp-area="Admin" asp-controller="Product" asp-action="Index">Return to Index page</a>
-        <a asp-area="Customer" class="btn btn-outline-dark">Order</a>
+        <a asp-area="Customer" asp-controller="Order" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-outline-dark">Order</a>
     </form>
 
 </div>

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace WatchStor.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241023170800_AddnewCulmstitleToPayModel")]
+    partial class AddnewCulmstitleToPayModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,24 +56,24 @@ namespace WatchStor.Data.Migrations
                         {
                             Id = 1,
                             Number = 2,
-                            TimeOfPurchase = new DateTime(2024, 10, 13, 21, 5, 57, 209, DateTimeKind.Local).AddTicks(2032),
-                            TimeOfSend = new DateTime(2024, 10, 16, 21, 5, 57, 209, DateTimeKind.Local).AddTicks(2051),
+                            TimeOfPurchase = new DateTime(2024, 10, 13, 20, 37, 59, 779, DateTimeKind.Local).AddTicks(1476),
+                            TimeOfSend = new DateTime(2024, 10, 16, 20, 37, 59, 779, DateTimeKind.Local).AddTicks(1495),
                             WatchId = 1
                         },
                         new
                         {
                             Id = 2,
                             Number = 1,
-                            TimeOfPurchase = new DateTime(2024, 10, 18, 21, 5, 57, 209, DateTimeKind.Local).AddTicks(2055),
-                            TimeOfSend = new DateTime(2024, 10, 21, 21, 5, 57, 209, DateTimeKind.Local).AddTicks(2056),
+                            TimeOfPurchase = new DateTime(2024, 10, 18, 20, 37, 59, 779, DateTimeKind.Local).AddTicks(1499),
+                            TimeOfSend = new DateTime(2024, 10, 21, 20, 37, 59, 779, DateTimeKind.Local).AddTicks(1500),
                             WatchId = 2
                         },
                         new
                         {
                             Id = 3,
                             Number = 3,
-                            TimeOfPurchase = new DateTime(2024, 10, 20, 21, 5, 57, 209, DateTimeKind.Local).AddTicks(2057),
-                            TimeOfSend = new DateTime(2024, 10, 27, 21, 5, 57, 209, DateTimeKind.Local).AddTicks(2058),
+                            TimeOfPurchase = new DateTime(2024, 10, 20, 20, 37, 59, 779, DateTimeKind.Local).AddTicks(1501),
+                            TimeOfSend = new DateTime(2024, 10, 27, 20, 37, 59, 779, DateTimeKind.Local).AddTicks(1502),
                             WatchId = 3
                         });
                 });
@@ -83,8 +86,9 @@ namespace WatchStor.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("Time")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Time")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
