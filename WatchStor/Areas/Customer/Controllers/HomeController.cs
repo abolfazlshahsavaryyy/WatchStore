@@ -5,6 +5,7 @@ using WatchStor.Models;
 
 namespace WatchStor.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

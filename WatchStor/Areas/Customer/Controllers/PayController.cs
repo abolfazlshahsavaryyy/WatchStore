@@ -3,6 +3,7 @@ using WatchStor.Models;
 
 namespace WatchStor.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class PayController : Controller
     {
         private readonly ApplicationDbContext _context;
